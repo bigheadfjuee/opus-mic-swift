@@ -11,7 +11,7 @@ import SwiftUI
 struct opus_mic_swiftApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(audioRecorder: AudioRecorder())
         }
     }
 }
