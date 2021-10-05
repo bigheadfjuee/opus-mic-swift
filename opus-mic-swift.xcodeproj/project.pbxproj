@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0BBFD5270C88C300C01D89 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0BBFD4270C88C300C01D89 /* ChatVC.swift */; };
+		EA0BBFD7270C89A800C01D89 /* AudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0BBFD6270C89A800C01D89 /* AudioUnit.swift */; };
+		EA0BBFD9270C929200C01D89 /* AudioUnitExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0BBFD8270C929200C01D89 /* AudioUnitExt.swift */; };
 		EA2DC9452707548B007919C1 /* opus_mic_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DC9442707548B007919C1 /* opus_mic_swiftApp.swift */; };
 		EA2DC9472707548B007919C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DC9462707548B007919C1 /* ContentView.swift */; };
 		EA2DC9492707548C007919C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2DC9482707548C007919C1 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA0BBFD4270C88C300C01D89 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		EA0BBFD6270C89A800C01D89 /* AudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnit.swift; sourceTree = "<group>"; };
+		EA0BBFD8270C929200C01D89 /* AudioUnitExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitExt.swift; sourceTree = "<group>"; };
 		EA2DC9412707548B007919C1 /* opus-mic-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opus-mic-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2DC9442707548B007919C1 /* opus_mic_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftApp.swift; sourceTree = "<group>"; };
 		EA2DC9462707548B007919C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0BBFDA270C96EA00C01D89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA2DC9382707548B007919C1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,7 @@
 				EA2DC9542707548D007919C1 /* opus-mic-swiftTests */,
 				EA2DC95E2707548D007919C1 /* opus-mic-swiftUITests */,
 				EA2DC9422707548B007919C1 /* Products */,
+				EA0BBFDA270C96EA00C01D89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +120,9 @@
 				EA2DC9462707548B007919C1 /* ContentView.swift */,
 				EA2DC9482707548C007919C1 /* Assets.xcassets */,
 				EA2DC94A2707548C007919C1 /* Preview Content */,
+				EA0BBFD4270C88C300C01D89 /* ChatVC.swift */,
+				EA0BBFD6270C89A800C01D89 /* AudioUnit.swift */,
+				EA0BBFD8270C929200C01D89 /* AudioUnitExt.swift */,
 			);
 			path = "opus-mic-swift";
 			sourceTree = "<group>";
@@ -265,10 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0BBFD7270C89A800C01D89 /* AudioUnit.swift in Sources */,
 				EA2DC9472707548B007919C1 /* ContentView.swift in Sources */,
 				EA2DC97127075504007919C1 /* AudioRec.swift in Sources */,
 				EA2DC97027075504007919C1 /* MicRecord.swift in Sources */,
 				EA2DC9452707548B007919C1 /* opus_mic_swiftApp.swift in Sources */,
+				EA0BBFD9270C929200C01D89 /* AudioUnitExt.swift in Sources */,
+				EA0BBFD5270C88C300C01D89 /* ChatVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U9T36E7C82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "opus-mic-swift/Info.plist";
@@ -461,7 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U9T36E7C82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "opus-mic-swift/Info.plist";
