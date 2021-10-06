@@ -7,9 +7,8 @@
 
 import Foundation
 import AVFoundation
+import OpusKit
 
-
-//
 // Opus audio info.
 //
 public class OpusAudioInfo {
@@ -67,10 +66,13 @@ public class AudioUtil {
     //
     // Default audio files url in document directory
     //
-    public static let RAW_PCM_FILE = FileUtil.createFileUrl(for: "pcm.raw", in: FileUtil.DOCUMENTS_DIR)
-    public static let TEMP_WAV_FILE = FileUtil.createFileUrl(for: "wav.wav", in: FileUtil.DOCUMENTS_DIR)
-    public static let ENCODED_OPUS_FILE = FileUtil.createFileUrl(for: "encoded_opus_ios.opus", in: FileUtil.DOCUMENTS_DIR)
-    public static let DECODED_WAV_WITH_HEADER_FILE = FileUtil.createFileUrl(for: "decoded_wav_with_header.wav", in: FileUtil.DOCUMENTS_DIR)
+  public static let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+  
+    public static let RAW_PCM_FILE = documentsPath + "/pcm.raw"
+    public static let TEMP_WAV_FILE =   documentsPath + "/wav.wav"
+    public static let ENCODED_OPUS_FILE = documentsPath + "/encoded_opus_ios.opus"
+    public static let DECODED_WAV_WITH_HEADER_FILE = documentsPath + "/decoded_wav_with_header.wav"
+  
 
 /**
  Creates fake wav header to play Linear PCM
@@ -219,9 +221,7 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
      - parameter callback: clouser to invoked after checking permission
      */
     public static func checkRecordingPermission(onPermissionChecked callback: @escaping(_ isPermissionGranted: Bool) -> Void) {
-        
-        Logger.logIt(#function)
-        
+               
         var isPermissionGranted = false
         
         switch AVAudioSession.sharedInstance().recordPermission {
@@ -259,13 +259,13 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
      */
     public static func saveAudio(to fileUri: URL, audioData: Data) {
         
-        Logger.logIt(#function)
-        Logger.logIt("save to: \(fileUri)")
+        debugPrint(#function)
+        debugPrint("save to: \(fileUri)")
         
         do {
             try audioData.write(to: fileUri)
         } catch {
-            Logger.logIt(error.localizedDescription)
+            debugPrint(error.localizedDescription)
         }
     }
     
@@ -278,7 +278,7 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
      */
     public static func encodeToSelfDelimitedOpus(pcmData: Data, splitSize: Int) -> Data {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         var encodedData = Data()
         
@@ -290,7 +290,7 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
         
         var readCount = 1
         let splitCount = (pcmData.count / splitSize)
-        Logger.logIt("split count: \(splitCount)")
+        debugPrint("split count: \(splitCount)")
         
         var header: Data
         
@@ -316,11 +316,17 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
                 // header is exactly one byte
                 // header indicates size of the encoded opus data
                 //
-                header = Data(from: encodedChunk.count)[0..<1]
-                //Logger.logIt("header: \([UInt8](header))")
-                
+              do {
+                try header = Data(from: encodedChunk.count as! Decoder)[0..<1]
                 encodedData.append(header)
                 encodedData.append(encodedChunk)
+              }
+              catch _ {
+                
+              }
+                //debugPrint("header: \([UInt8](header))")
+                
+                
             } else {
                 print("failed to encode at index: \(readStart)")
             }
@@ -332,15 +338,18 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
         //
         // remaining data
         //
-        //Logger.logIt("append remaining data")
+        //debugPrint("append remaining data")
         pcmChunk = pcmData[readIndex..<pcmData.count]
         
         if let encodedChunk = OpusKit.shared.encodeData(pcmChunk) {
-            header = Data(from: encodedChunk.count)[0..<1]
-            //Logger.logIt("header: \([UInt8](header))")
-            
+          do {
+            try header = Data(from: encodedChunk.count as! Decoder)[0..<1]
             encodedData.append(header)
             encodedData.append(encodedChunk)
+          }catch _ {
+            
+          }
+            //debugPrint("header: \([UInt8](header))")
         } else {
             print("failed to encode at index: \(readIndex)")
         }
@@ -373,7 +382,7 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
         while readIndex < opusData.count {
             
             headerData = opusData[readIndex..<(readIndex + headerSize)]
-            //Logger.logIt("headerData: \([UInt8](headerData))")
+            //debugPrint("headerData: \([UInt8](headerData))")
             
             opusChunkSizeFromHeader = Int([UInt8](headerData)[0])
             
@@ -381,10 +390,10 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
             readEnd = readStart + opusChunkSizeFromHeader
             
             extractedOpusChunk = opusData[readStart..<readEnd]
-            //Logger.logIt("extracted: \(extractedOpusChunk)")
+            //debugPrint("extracted: \(extractedOpusChunk)")
             
             if let decodedDataChunk = OpusKit.shared.decodeData(extractedOpusChunk) {
-                //Logger.logIt("decodedDataChunk: \(decodedDataChunk)")
+                //debugPrint("decodedDataChunk: \(decodedDataChunk)")
                 decodedData.append(decodedDataChunk)
             } else {
                 print("failed to decode at index: \(readStart)")
@@ -414,14 +423,14 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
             let asset = AVAsset(url: fileUrl)
             let assetReader = try AVAssetReader(asset: asset)
             let track = asset.tracks(withMediaType: AVMediaType.audio).first
-            let outputSettings = LinearPCMRecording.LINEAR_PCM_RECODING_SETTINGS_DEFAULT
+          
             
-            let trackOutput = AVAssetReaderTrackOutput(track: track!, outputSettings: outputSettings)
+          let trackOutput = AVAssetReaderTrackOutput(track: track!, outputSettings: [:])
             
             assetReader.add(trackOutput)
             assetReader.startReading()
             
-            Logger.logIt("reading data with AVAssetReader")
+            debugPrint("reading data with AVAssetReader")
             while assetReader.status == AVAssetReader.Status.reading {
                 
                 if let sampleBufferRef = trackOutput.copyNextSampleBuffer() {
@@ -440,11 +449,11 @@ public static func createDefaultWavHeader(dataSize: Int32) -> Data {
                     }
                     
                 } else {
-                    Logger.logIt("failed to copy next")
+                    debugPrint("failed to copy next")
                 }
             }
         } catch {
-            Logger.logIt(error.localizedDescription)
+            debugPrint(error.localizedDescription)
         }
         
         return pcmOnly as Data

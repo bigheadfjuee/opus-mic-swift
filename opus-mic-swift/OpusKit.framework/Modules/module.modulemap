@@ -1,0 +1,11 @@
+framework module OpusKit {
+  umbrella header "OpusKit.h"
+
+  export *
+  module * { export * }
+}
+
+module OpusKit.Swift {
+    header "OpusKit-Swift.h"
+    requires objc
+}

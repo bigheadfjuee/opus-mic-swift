@@ -7,7 +7,8 @@
 
 import Foundation
 import AVFoundation
-
+import OpusKit
+import os
 
 public class Audio {
     public static let SAMPLE_RATE_16_KHZ: opus_int32 = 16_000
@@ -79,9 +80,7 @@ public class PCMRecordingSetting {
     public var recordingSettings = LINEAR_PCM_DEFAULT
     
     private func updateLinearPCMRecordingSettings(){
-        
-        Logger.debug(#function)
-        
+                
         recordingSettings = [
             AVFormatIDKey: kAudioFormatLinearPCM,
             AVSampleRateKey: sampleRate,

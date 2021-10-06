@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA114A4F270D349E00140848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA114A4E270D349E00140848 /* Assets.xcassets */; };
+		EA114A52270D349E00140848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA114A51270D349E00140848 /* Preview Assets.xcassets */; };
+		EA114A5C270D349E00140848 /* opus_mic_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA114A5B270D349E00140848 /* opus_mic_swiftTests.swift */; };
+		EA114A66270D349E00140848 /* opus_mic_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA114A65270D349E00140848 /* opus_mic_swiftUITests.swift */; };
+		EA114A68270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */; };
+		EA251619270D72DE00458601 /* OpusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; platformFilter = ios; };
+		EA25161A270D72DE00458601 /* OpusKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EACDAE75270D869100D513FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE73270D869100D513FA /* ContentView.swift */; };
+		EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */; };
+		EAD15F68270D4B78008CDCBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F61270D4B78008CDCBA /* ChatVC.swift */; };
+		EAD15F69270D4B78008CDCBA /* AudioRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F62270D4B78008CDCBA /* AudioRec.swift */; };
+		EAD15F6A270D4B78008CDCBA /* AudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F63270D4B78008CDCBA /* AudioUnit.swift */; };
+		EAD15F6B270D4B78008CDCBA /* AudioUnitExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F64270D4B78008CDCBA /* AudioUnitExt.swift */; };
+		EAD15F6C270D4B78008CDCBA /* MicRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F65270D4B78008CDCBA /* MicRecord.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA114A58270D349E00140848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA114A3F270D349C00140848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA114A46270D349C00140848;
+			remoteInfo = "opus-mic-swift";
+		};
+		EA114A62270D349E00140848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA114A3F270D349C00140848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA114A46270D349C00140848;
+			remoteInfo = "opus-mic-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA25161B270D72DE00458601 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA25161A270D72DE00458601 /* OpusKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA114A47270D349C00140848 /* opus-mic-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "opus-mic-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA114A4E270D349E00140848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA114A51270D349E00140848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA114A57270D349E00140848 /* opus-mic-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opus-mic-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA114A5B270D349E00140848 /* opus_mic_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftTests.swift; sourceTree = "<group>"; };
+		EA114A61270D349E00140848 /* opus-mic-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opus-mic-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA114A65270D349E00140848 /* opus_mic_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITests.swift; sourceTree = "<group>"; };
+		EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EACDAE73270D869100D513FA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftApp.swift; sourceTree = "<group>"; };
+		EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpusKit.framework; path = "opus-mic-swift/OpusKit.framework"; sourceTree = SOURCE_ROOT; };
+		EAD15F61270D4B78008CDCBA /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		EAD15F62270D4B78008CDCBA /* AudioRec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRec.swift; sourceTree = "<group>"; };
+		EAD15F63270D4B78008CDCBA /* AudioUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnit.swift; sourceTree = "<group>"; };
+		EAD15F64270D4B78008CDCBA /* AudioUnitExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitExt.swift; sourceTree = "<group>"; };
+		EAD15F65270D4B78008CDCBA /* MicRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicRecord.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA114A44270D349C00140848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA251619270D72DE00458601 /* OpusKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A54270D349E00140848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A5E270D349E00140848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA114A3E270D349C00140848 = {
+			isa = PBXGroup;
+			children = (
+				EA114A49270D349C00140848 /* opus-mic-swift */,
+				EA114A5A270D349E00140848 /* opus-mic-swiftTests */,
+				EA114A64270D349E00140848 /* opus-mic-swiftUITests */,
+				EA114A48270D349C00140848 /* Products */,
+				EA251618270D72DE00458601 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA114A48270D349C00140848 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA114A47270D349C00140848 /* opus-mic-swift.app */,
+				EA114A57270D349E00140848 /* opus-mic-swiftTests.xctest */,
+				EA114A61270D349E00140848 /* opus-mic-swiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA114A49270D349C00140848 /* opus-mic-swift */ = {
+			isa = PBXGroup;
+			children = (
+				EACDAE73270D869100D513FA /* ContentView.swift */,
+				EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */,
+				EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */,
+				EAD15F62270D4B78008CDCBA /* AudioRec.swift */,
+				EAD15F63270D4B78008CDCBA /* AudioUnit.swift */,
+				EAD15F64270D4B78008CDCBA /* AudioUnitExt.swift */,
+				EAD15F61270D4B78008CDCBA /* ChatVC.swift */,
+				EAD15F65270D4B78008CDCBA /* MicRecord.swift */,
+				EA114A4E270D349E00140848 /* Assets.xcassets */,
+				EA114A50270D349E00140848 /* Preview Content */,
+			);
+			path = "opus-mic-swift";
+			sourceTree = "<group>";
+		};
+		EA114A50270D349E00140848 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EA114A51270D349E00140848 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA114A5A270D349E00140848 /* opus-mic-swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA114A5B270D349E00140848 /* opus_mic_swiftTests.swift */,
+			);
+			path = "opus-mic-swiftTests";
+			sourceTree = "<group>";
+		};
+		EA114A64270D349E00140848 /* opus-mic-swiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA114A65270D349E00140848 /* opus_mic_swiftUITests.swift */,
+				EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */,
+			);
+			path = "opus-mic-swiftUITests";
+			sourceTree = "<group>";
+		};
+		EA251618270D72DE00458601 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA114A46270D349C00140848 /* opus-mic-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA114A6B270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swift" */;
+			buildPhases = (
+				EA114A43270D349C00140848 /* Sources */,
+				EA114A44270D349C00140848 /* Frameworks */,
+				EA114A45270D349C00140848 /* Resources */,
+				EA25161B270D72DE00458601 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "opus-mic-swift";
+			productName = "opus-mic-swift";
+			productReference = EA114A47270D349C00140848 /* opus-mic-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA114A56270D349E00140848 /* opus-mic-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA114A6E270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swiftTests" */;
+			buildPhases = (
+				EA114A53270D349E00140848 /* Sources */,
+				EA114A54270D349E00140848 /* Frameworks */,
+				EA114A55270D349E00140848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA114A59270D349E00140848 /* PBXTargetDependency */,
+			);
+			name = "opus-mic-swiftTests";
+			productName = "opus-mic-swiftTests";
+			productReference = EA114A57270D349E00140848 /* opus-mic-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA114A60270D349E00140848 /* opus-mic-swiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA114A71270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swiftUITests" */;
+			buildPhases = (
+				EA114A5D270D349E00140848 /* Sources */,
+				EA114A5E270D349E00140848 /* Frameworks */,
+				EA114A5F270D349E00140848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA114A63270D349E00140848 /* PBXTargetDependency */,
+			);
+			name = "opus-mic-swiftUITests";
+			productName = "opus-mic-swiftUITests";
+			productReference = EA114A61270D349E00140848 /* opus-mic-swiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA114A3F270D349C00140848 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					EA114A46270D349C00140848 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					EA114A56270D349E00140848 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = EA114A46270D349C00140848;
+					};
+					EA114A60270D349E00140848 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = EA114A46270D349C00140848;
+					};
+				};
+			};
+			buildConfigurationList = EA114A42270D349C00140848 /* Build configuration list for PBXProject "opus-mic-swift" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA114A3E270D349C00140848;
+			productRefGroup = EA114A48270D349C00140848 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA114A46270D349C00140848 /* opus-mic-swift */,
+				EA114A56270D349E00140848 /* opus-mic-swiftTests */,
+				EA114A60270D349E00140848 /* opus-mic-swiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA114A45270D349C00140848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA114A52270D349E00140848 /* Preview Assets.xcassets in Resources */,
+				EA114A4F270D349E00140848 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A55270D349E00140848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A5F270D349E00140848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA114A43270D349C00140848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD15F6A270D4B78008CDCBA /* AudioUnit.swift in Sources */,
+				EAD15F68270D4B78008CDCBA /* ChatVC.swift in Sources */,
+				EACDAE75270D869100D513FA /* ContentView.swift in Sources */,
+				EAD15F6C270D4B78008CDCBA /* MicRecord.swift in Sources */,
+				EAD15F69270D4B78008CDCBA /* AudioRec.swift in Sources */,
+				EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */,
+				EAD15F6B270D4B78008CDCBA /* AudioUnitExt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A53270D349E00140848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA114A5C270D349E00140848 /* opus_mic_swiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA114A5D270D349E00140848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA114A66270D349E00140848 /* opus_mic_swiftUITests.swift in Sources */,
+				EA114A68270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA114A59270D349E00140848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA114A46270D349C00140848 /* opus-mic-swift */;
+			targetProxy = EA114A58270D349E00140848 /* PBXContainerItemProxy */;
+		};
+		EA114A63270D349E00140848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA114A46270D349C00140848 /* opus-mic-swift */;
+			targetProxy = EA114A62270D349E00140848 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EA114A69270D349E00140848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA114A6A270D349E00140848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA114A6C270D349E00140848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpusKit",
+					"$(PROJECT_DIR)/opus-mic-swift",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA114A6D270D349E00140848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpusKit",
+					"$(PROJECT_DIR)/opus-mic-swift",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA114A6F270D349E00140848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/opus-mic-swift.app/opus-mic-swift";
+			};
+			name = Debug;
+		};
+		EA114A70270D349E00140848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/opus-mic-swift.app/opus-mic-swift";
+			};
+			name = Release;
+		};
+		EA114A72270D349E00140848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "opus-mic-swift";
+			};
+			name = Debug;
+		};
+		EA114A73270D349E00140848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9T36E7C82;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "opus-mic-swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA114A42270D349C00140848 /* Build configuration list for PBXProject "opus-mic-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA114A69270D349E00140848 /* Debug */,
+				EA114A6A270D349E00140848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA114A6B270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA114A6C270D349E00140848 /* Debug */,
+				EA114A6D270D349E00140848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA114A6E270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA114A6F270D349E00140848 /* Debug */,
+				EA114A70270D349E00140848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA114A71270D349E00140848 /* Build configuration list for PBXNativeTarget "opus-mic-swiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA114A72270D349E00140848 /* Debug */,
+				EA114A73270D349E00140848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA114A3F270D349C00140848 /* Project object */;
+}

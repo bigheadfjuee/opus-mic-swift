@@ -8,19 +8,17 @@
 import Foundation
 import UIKit
 import MapKit
-import MessageKit
+//import MessageKit
 import AVFoundation
 import OpusKit
 import os
 
-class BasicChatViewController: ChatViewController {
+class BasicChatViewController: UIViewController { //ChatViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Logger.logIt(#function)
-        
-        Logger.logIt("Initilizing opus lib kit")
+                        
+        debugPrint("Initilizing opus lib kit")
         OpusKit.shared.initialize(sampleRate: Opus.SAMPLE_RATE_DEFAULT,
                                   numberOfChannels: Opus.CHANNEL_COUNT_DEFAULT,
                                   packetSize: Opus.OPUS_ENCODER_BUFFER_SIZE,
@@ -38,17 +36,12 @@ class BasicChatViewController: ChatViewController {
     
     @objc
     func onTapRecordButton(sender: UIButton){
-        
-        Logger.logIt(#function)
-        
         toggleRecording()
     }
     
     private func toggleRecording(){
-        
-        Logger.logIt(#function)
-        
-        Logger.logIt("isRecording: \(isRecording)")
+              
+        debugPrint("isRecording: \(isRecording)")
         
         if isRecording {
             
@@ -74,47 +67,48 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
     
     private func checkPermissionAndStartRecording() {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         AudioUtil.checkRecordingPermission() { isPermissionGranted in
             
-            Logger.logIt("isPermissionGranted: \(isPermissionGranted)")
+            debugPrint("isPermissionGranted: \(isPermissionGranted)")
             
             if isPermissionGranted {
                 self.recordUsingAVAudioRecorder()
             } else {
-                Logger.logIt("don't have permission to record")
+                debugPrint("don't have permission to record")
             }
         }
     }
     
     private func setupRecorder() {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         let tempAudioFileUrl = AudioUtil.TEMP_WAV_FILE
-        Logger.logIt("tempAudioFileUrl: \(tempAudioFileUrl)")
+        debugPrint("tempAudioFileUrl: \(tempAudioFileUrl)")
         
-        let linearPcmRecordingSettings = LinearPCMRecording.LINEAR_PCM_RECODING_SETTINGS_DEFAULT
-        Logger.logIt("RecordingSettings: \(linearPcmRecordingSettings)")
+//        let linearPcmRecordingSettings = LinearPCMRecording.LINEAR_PCM_RECODING_SETTINGS_DEFAULT
+//        debugPrint("RecordingSettings: \(linearPcmRecordingSettings)")
         
         do {
             
             startRecordingSession()
             
-            audioRecorder = try AVAudioRecorder(url: tempAudioFileUrl, settings: linearPcmRecordingSettings)
+          audioRecorder = try AVAudioRecorder(url: URL(fileURLWithPath: tempAudioFileUrl), settings: [AVLinearPCMBitDepthKey:16])
+                    
             audioRecorder.delegate = self
             //audioRecorder.isMeteringEnabled = true
             audioRecorder.prepareToRecord()
         }
         catch {
-            Logger.logIt("\(error.localizedDescription)")
+            debugPrint("\(error.localizedDescription)")
         }
     }
     
     private func startRecording() {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         if audioRecorder == nil {
             setupRecorder()
@@ -125,7 +119,7 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
     
     private func stopRecording() {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         guard audioRecorder != nil else {
             return
@@ -136,7 +130,7 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
     
     private func deleteTempAudioFile(){
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         guard audioRecorder != nil else {
             return
@@ -149,38 +143,38 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
         // delete temporary audio file
         let recordingDeleted = audioRecorder.deleteRecording()
         if recordingDeleted {
-            Logger.logIt("temp (recorded) audio file deleted")
+            debugPrint("temp (recorded) audio file deleted")
         } else {
-            Logger.logIt("failed to delete temp (recorded) audio file")
+            debugPrint("failed to delete temp (recorded) audio file")
         }
     }
     
     private func startRecordingSession(){
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(.record, mode: .spokenAudio)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
-            Logger.logIt("Failed to deactivate recording session")
+            debugPrint("Failed to deactivate recording session")
         }
     }
     
     private func stopRecordingSession(){
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         do {
             try AVAudioSession.sharedInstance().setActive(false)
         } catch {
-            Logger.logIt("Failed to deactivate recording session")
+            debugPrint("Failed to deactivate recording session")
         }
     }
     
     private func recordUsingAVAudioRecorder(){
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         setupRecorder()
         
@@ -189,23 +183,23 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
     
     private func encodeRecordedAudio(){
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
-        let pcmData = AudioUtil.extractPcmOnly(from: AudioUtil.TEMP_WAV_FILE)
+      let pcmData = AudioUtil.extractPcmOnly(from: URL(fileURLWithPath: AudioUtil.TEMP_WAV_FILE))
         
         if pcmData.count > 1 {
             
-            Logger.logIt("encoding pcm to self-delimited opus")
+            debugPrint("encoding pcm to self-delimited opus")
             
             let encodedOpusData = AudioUtil.encodeToSelfDelimitedOpus(pcmData: pcmData, splitSize: PCM.SPLIT_CHUNK_SIZE_DEFAULT)
-            Logger.logIt("encoded opus: \(encodedOpusData)")
+            debugPrint("encoded opus: \(encodedOpusData)")
             
             
-            Logger.logIt("save encoded opus")
-            AudioUtil.saveAudio(to: AudioUtil.ENCODED_OPUS_FILE, audioData: encodedOpusData)
+            debugPrint("save encoded opus")
+            AudioUtil.saveAudio(to: URL(fileURLWithPath: AudioUtil.ENCODED_OPUS_FILE), audioData: encodedOpusData)
             
         } else {
-            Logger.logIt("no data to encode")
+            debugPrint("no data to encode")
         }
 
         deleteTempAudioFile()
@@ -214,18 +208,18 @@ extension BasicChatViewController: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         
-        Logger.logIt(#function)
+        debugPrint(#function)
         
         let finishedSuccessFully = flag
         
         if finishedSuccessFully {
             
-            Logger.logIt("finished recording successfully")
+            debugPrint("finished recording successfully")
             
             encodeRecordedAudio()
             
         } else {
-            Logger.logIt("recording failed - audio encoding error")
+            debugPrint("recording failed - audio encoding error")
         }
     }
 }
