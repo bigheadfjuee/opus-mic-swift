@@ -14,6 +14,7 @@ struct ContentView: View {
   @ObservedObject var audioRecorder: AudioRecorder
   @State private var isRecording = false
   @State private var isPlaying = false
+  var audioEngine = AudioEngine()
   
   var body: some View {
     
@@ -21,7 +22,14 @@ struct ContentView: View {
       Button(action: {
         // click event
         debugPrint("startRecording")
-        self.audioRecorder.startRecording()
+//        self.audioRecorder.startRecording()
+        do {
+//          try audioEngine.startRecordToFile()
+          try audioEngine.startRecording()
+        } catch {
+          debugPrint(error)
+        }
+        
         isRecording = true
       }){
         HStack {
@@ -31,14 +39,16 @@ struct ContentView: View {
         .padding()
         .frame(width: 200)
         .foregroundColor(.white)
-        .background(Color.red)
+        .background( isRecording ? Color.white : .red)
         .cornerRadius(40)
       }.disabled(isRecording)
     
       Button(action: {
        // click event
         debugPrint("stopRecording")
-        self.audioRecorder.stopRecording()
+//        self.audioRecorder.stopRecording()
+//        audioEngine.stopRecordToFile()
+        audioEngine.stopRecording()
         isRecording = false
       }){
         HStack {
@@ -48,7 +58,7 @@ struct ContentView: View {
         .padding()
         .frame(width: 200)
         .foregroundColor(.white)
-        .background(Color.gray)
+        .background(isRecording ? Color.gray : .white)
         .cornerRadius(40)
         
       }.disabled(!isRecording)
@@ -58,6 +68,7 @@ struct ContentView: View {
        // click event
         debugPrint("play")
         audioRecorder.startPlaying()
+        isPlaying = true
       }){
         HStack {
           Image(systemName: "play.circle").font(.title)
@@ -66,7 +77,7 @@ struct ContentView: View {
         .padding()
         .frame(width: 200)
         .foregroundColor(.white)
-        .background(Color.green)
+        .background(isPlaying ? Color.white : .green)
         .cornerRadius(40)
         
       }.disabled(isPlaying)
@@ -74,7 +85,8 @@ struct ContentView: View {
       Button(action: {
        // click event
         debugPrint("stop play")
-        audioRecorder.stopRecording()
+        audioRecorder.stopPlaying()
+        isPlaying = false
       }){
         HStack {
           Image(systemName: "stop.circle").font(.title)
@@ -83,7 +95,7 @@ struct ContentView: View {
         .padding()
         .frame(width: 200)
         .foregroundColor(.white)
-        .background(Color.green)
+        .background(isPlaying ? Color.green : .white)
         .cornerRadius(40)
         
       }.disabled(!isPlaying)

@@ -54,7 +54,7 @@ class AudioRecorder: ObservableObject {
     }
     
     let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    let audioFilename = documentPath.appendingPathComponent("rec.opus")
+    let audioFilename = documentPath.appendingPathComponent("rec")
     
     let settings = [
       AVFormatIDKey: Int(kAudioFormatOpus),
@@ -91,7 +91,7 @@ class AudioRecorder: ObservableObject {
           
       do {
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("rec.opus")
+        let audioFilename = documentPath.appendingPathComponent("rec")
         
           audioPlayer = try AVAudioPlayer(contentsOf : audioFilename)
           audioPlayer.prepareToPlay()
@@ -104,7 +104,7 @@ class AudioRecorder: ObservableObject {
               
   }
 
-  func stopPlaying(url : URL){
+  func stopPlaying(){
       audioPlayer.stop()    
   }
   

@@ -14,6 +14,7 @@
 		EA114A68270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */; };
 		EA251619270D72DE00458601 /* OpusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; platformFilter = ios; };
 		EA25161A270D72DE00458601 /* OpusKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA7109462711A3DF0086623A /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7109452711A3DF0086623A /* AudioEngine.swift */; };
 		EACDAE75270D869100D513FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE73270D869100D513FA /* ContentView.swift */; };
 		EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */; };
 		EAD15F68270D4B78008CDCBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD15F61270D4B78008CDCBA /* ChatVC.swift */; };
@@ -63,6 +64,7 @@
 		EA114A61270D349E00140848 /* opus-mic-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opus-mic-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA114A65270D349E00140848 /* opus_mic_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITests.swift; sourceTree = "<group>"; };
 		EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA7109452711A3DF0086623A /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		EACDAE73270D869100D513FA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftApp.swift; sourceTree = "<group>"; };
 		EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpusKit.framework; path = "opus-mic-swift/OpusKit.framework"; sourceTree = SOURCE_ROOT; };
@@ -123,8 +125,8 @@
 		EA114A49270D349C00140848 /* opus-mic-swift */ = {
 			isa = PBXGroup;
 			children = (
-				EACDAE73270D869100D513FA /* ContentView.swift */,
 				EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */,
+				EACDAE73270D869100D513FA /* ContentView.swift */,
 				EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */,
 				EAD15F62270D4B78008CDCBA /* AudioRec.swift */,
 				EAD15F63270D4B78008CDCBA /* AudioUnit.swift */,
@@ -133,6 +135,7 @@
 				EAD15F65270D4B78008CDCBA /* MicRecord.swift */,
 				EA114A4E270D349E00140848 /* Assets.xcassets */,
 				EA114A50270D349E00140848 /* Preview Content */,
+				EA7109452711A3DF0086623A /* AudioEngine.swift */,
 			);
 			path = "opus-mic-swift";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				EAD15F68270D4B78008CDCBA /* ChatVC.swift in Sources */,
 				EACDAE75270D869100D513FA /* ContentView.swift in Sources */,
 				EAD15F6C270D4B78008CDCBA /* MicRecord.swift in Sources */,
+				EA7109462711A3DF0086623A /* AudioEngine.swift in Sources */,
 				EAD15F69270D4B78008CDCBA /* AudioRec.swift in Sources */,
 				EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */,
 				EAD15F6B270D4B78008CDCBA /* AudioUnitExt.swift in Sources */,
