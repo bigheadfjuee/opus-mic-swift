@@ -14,6 +14,8 @@
 		EA114A68270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */; };
 		EA251619270D72DE00458601 /* OpusKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; platformFilter = ios; };
 		EA25161A270D72DE00458601 /* OpusKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA57868D271965EC00491A38 /* pcm_udp.m in Sources */ = {isa = PBXBuildFile; fileRef = EA578687271965EB00491A38 /* pcm_udp.m */; };
+		EA57868F271965EC00491A38 /* LiveAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EA57868B271965EC00491A38 /* LiveAudio.m */; };
 		EA7109462711A3DF0086623A /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7109452711A3DF0086623A /* AudioEngine.swift */; };
 		EACDAE75270D869100D513FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE73270D869100D513FA /* ContentView.swift */; };
 		EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */; };
@@ -64,6 +66,11 @@
 		EA114A61270D349E00140848 /* opus-mic-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "opus-mic-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA114A65270D349E00140848 /* opus_mic_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITests.swift; sourceTree = "<group>"; };
 		EA114A67270D349E00140848 /* opus_mic_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA578686271965EB00491A38 /* opus-mic-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "opus-mic-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA578687271965EB00491A38 /* pcm_udp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pcm_udp.m; sourceTree = "<group>"; };
+		EA578688271965EB00491A38 /* LiveAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveAudio.h; sourceTree = "<group>"; };
+		EA578689271965EB00491A38 /* pcm_udp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcm_udp.h; sourceTree = "<group>"; };
+		EA57868B271965EC00491A38 /* LiveAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveAudio.m; sourceTree = "<group>"; };
 		EA7109452711A3DF0086623A /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		EACDAE73270D869100D513FA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = opus_mic_swiftApp.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		EAD15F63270D4B78008CDCBA /* AudioUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnit.swift; sourceTree = "<group>"; };
 		EAD15F64270D4B78008CDCBA /* AudioUnitExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitExt.swift; sourceTree = "<group>"; };
 		EAD15F65270D4B78008CDCBA /* MicRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicRecord.swift; sourceTree = "<group>"; };
+		EAEE8983271593B500DF2DE7 /* swift-rtp-main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "swift-rtp-main"; path = "../../../Downloads/swift-rtp-main"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 		EA114A3E270D349C00140848 = {
 			isa = PBXGroup;
 			children = (
+				EAEE8983271593B500DF2DE7 /* swift-rtp-main */,
 				EA114A49270D349C00140848 /* opus-mic-swift */,
 				EA114A5A270D349E00140848 /* opus-mic-swiftTests */,
 				EA114A64270D349E00140848 /* opus-mic-swiftUITests */,
@@ -126,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				EACDAE74270D869100D513FA /* opus_mic_swiftApp.swift */,
+				EA578685271965C700491A38 /* PCM_UDP */,
 				EACDAE73270D869100D513FA /* ContentView.swift */,
 				EAD15F5E270D4AD1008CDCBA /* OpusKit.framework */,
 				EAD15F62270D4B78008CDCBA /* AudioRec.swift */,
@@ -170,6 +180,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA578685271965C700491A38 /* PCM_UDP */ = {
+			isa = PBXGroup;
+			children = (
+				EA578688271965EB00491A38 /* LiveAudio.h */,
+				EA57868B271965EC00491A38 /* LiveAudio.m */,
+				EA578689271965EB00491A38 /* pcm_udp.h */,
+				EA578687271965EB00491A38 /* pcm_udp.m */,
+				EA578686271965EB00491A38 /* opus-mic-swift-Bridging-Header.h */,
+			);
+			path = PCM_UDP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +263,7 @@
 				TargetAttributes = {
 					EA114A46270D349C00140848 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					EA114A56270D349E00140848 = {
 						CreatedOnToolsVersion = 13.0;
@@ -309,8 +332,10 @@
 				EAD15F6C270D4B78008CDCBA /* MicRecord.swift in Sources */,
 				EA7109462711A3DF0086623A /* AudioEngine.swift in Sources */,
 				EAD15F69270D4B78008CDCBA /* AudioRec.swift in Sources */,
+				EA57868F271965EC00491A38 /* LiveAudio.m in Sources */,
 				EACDAE76270D869100D513FA /* opus_mic_swiftApp.swift in Sources */,
 				EAD15F6B270D4B78008CDCBA /* AudioUnitExt.swift in Sources */,
+				EA57868D271965EC00491A38 /* pcm_udp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
@@ -494,6 +520,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "opus-mic-swift/PCM_UDP/opus-mic-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -504,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"opus-mic-swift/Preview Content\"";
@@ -530,6 +559,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.bxb.opus-mic-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "opus-mic-swift/PCM_UDP/opus-mic-swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
